@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace image_uploader_dotnet_api.Src.Data;
 
-class Seeder
+public class Seeder
 {
     public static async Task SeedPosts(DataContext dataContext)
     {
