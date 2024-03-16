@@ -17,12 +17,18 @@ builder.Services.AddDbContext<DataContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCors(builder => builder.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins(["https://localhost:4200", "http://localhost:4200"])
+);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
