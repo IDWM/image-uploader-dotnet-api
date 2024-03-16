@@ -10,7 +10,7 @@ using image_uploader_dotnet_api.Src.Data;
 namespace image_uploader_dotnet_api.Src.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240315005338_InitialCreate")]
+    [Migration("20240316163959_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,13 +25,25 @@ namespace image_uploader_dotnet_api.Src.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PublicId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Url")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Posts");
+                    b.ToTable("posts", (string)null);
                 });
 #pragma warning restore 612, 618
         }
