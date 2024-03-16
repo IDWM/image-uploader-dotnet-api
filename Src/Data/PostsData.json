@@ -1,8 +1,14 @@
 [
     {
-        "Name": "John"
+        "Title": "ASP.NET Core",
+        "Description": "Framework",
+        "Url": "https://res.cloudinary.com/dfjsoeq2y/image/upload/v1710608016/IDWM/NET_Core_Logo_umy4uc.svg",
+        "PublicId": "IDWM/NET_Core_Logo_umy4uc.svg"
     },
     {
-        "Name": "Doe"
+        "Title": "Angular",
+        "Description": "Framework",
+        "Url": "https://res.cloudinary.com/dfjsoeq2y/image/upload/v1710607929/IDWM/Angular_New_p7y6ma.svg",
+        "PublicId": "IDWM/Angular_New_p7y6ma.svg"
     }
 ]

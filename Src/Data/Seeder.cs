@@ -14,15 +14,15 @@ public class Seeder
         }
 
         var postsData = await File.ReadAllTextAsync("Src/Data/PostsData.json");
-        var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
-        var users = JsonSerializer.Deserialize<List<Post>>(postsData, options);
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var posts = JsonSerializer.Deserialize<List<Post>>(postsData, options);
 
-        if (users is null)
+        if (posts is null)
         {
             return;
         }
 
-        await dataContext.AddRangeAsync(users);
+        await dataContext.AddRangeAsync(posts);
         await dataContext.SaveChangesAsync();
     }
 }
