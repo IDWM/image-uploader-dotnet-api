@@ -1,6 +1,6 @@
 # Image Uploader Setup Guide
 
-This is an Image Uploader project that allows you to upload and manage images.
+This is an Image Uploader project that allows you to upload and view images.
 
 ## Prerequisites
 
